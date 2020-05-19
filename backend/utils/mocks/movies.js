@@ -10,6 +10,26 @@ const moviesMock = [
 {"id":"75fcd49c-e56b-4c4f-95ba-43fdba76d858","title":"Secret Garden, The","year":2008,"cover":"http://dummyimage.com/243x150.png/5fa2dd/ffffff","description":"Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\n\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat. Nulla nisl. Nunc nisl.","duration":42,"contentRating":"PG-13","source":"http://vistaprint.com/mi/integer/ac/neque/duis/bibendum.xml?at=tempus&turpis=semper&donec=est&posuere=quam&metus=pharetra&vitae=magna&ipsum=ac&aliquam=consequat&non=metus&mauris=sapien&morbi=ut&non=nunc&lectus=vestibulum&aliquam=ante&sit=ipsum&amet=primis&diam=in&in=faucibus&magna=orci&bibendum=luctus&imperdiet=et&nullam=ultrices&orci=posuere&pede=cubilia&venenatis=curae&non=mauris&sodales=viverra&sed=diam&tincidunt=vitae&eu=quam&felis=suspendisse&fusce=potenti&posuere=nullam&felis=porttitor&sed=lacus&lacus=at&morbi=turpis&sem=donec&mauris=posuere&laoreet=metus&ut=vitae&rhoncus=ipsum&aliquet=aliquam&pulvinar=non&sed=mauris&nisl=morbi&nunc=non&rhoncus=lectus&dui=aliquam&vel=sit&sem=amet&sed=diam&sagittis=in&nam=magna&congue=bibendum&risus=imperdiet&semper=nullam&porta=orci&volutpat=pede&quam=venenatis&pede=non&lobortis=sodales&ligula=sed&sit=tincidunt&amet=eu&eleifend=felis&pede=fusce&libero=posuere&quis=felis&orci=sed&nullam=lacus&molestie=morbi&nibh=sem&in=mauris&lectus=laoreet&pellentesque=ut&at=rhoncus&nulla=aliquet&suspendisse=pulvinar&potenti=sed&cras=nisl&in=nunc&purus=rhoncus&eu=dui&magna=vel","tags":["Animation|Children","Drama|War","Comedy|Fantasy","Comedy|Drama"]},
 {"id":"a4592f4e-f495-4e5b-a1b7-9d2f5d271e60","title":"Windtalkers","year":2008,"cover":"http://dummyimage.com/218x151.png/ff4444/ffffff","description":"Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.","duration":82,"contentRating":"G","source":"http://sciencedirect.com/eu.aspx?nisi=enim&at=in&nibh=tempor&in=turpis&hac=nec&habitasse=euismod&platea=scelerisque&dictumst=quam&aliquam=turpis&augue=adipiscing&quam=lorem&sollicitudin=vitae&vitae=mattis&consectetuer=nibh&eget=ligula&rutrum=nec&at=sem&lorem=duis&integer=aliquam&tincidunt=convallis&ante=nunc&vel=proin&ipsum=at&praesent=turpis&blandit=a&lacinia=pede&erat=posuere&vestibulum=nonummy&sed=integer&magna=non&at=velit&nunc=donec&commodo=diam&placerat=neque&praesent=vestibulum&blandit=eget&nam=vulputate&nulla=ut&integer=ultrices&pede=vel&justo=augue&lacinia=vestibulum&eget=ante&tincidunt=ipsum&eget=primis&tempus=in&vel=faucibus&pede=orci&morbi=luctus&porttitor=et&lorem=ultrices&id=posuere&ligula=cubilia&suspendisse=curae&ornare=donec&consequat=pharetra&lectus=magna&in=vestibulum&est=aliquet&risus=ultrices&auctor=erat&sed=tortor&tristique=sollicitudin&in=mi&tempus=sit&sit=amet&amet=lobortis&sem=sapien&fusce=sapien","tags":["Drama|Thriller","Horror"]}]
 
+
+function filteredMoviesMock(tag){
+    return moviesMock.filter(movie => movie.tags.includes(tag));
+}
+
+class MovieServiceMock {
+    async getMovies(){
+        return Promise.resolve(moviesMock);
+    }
+    async getMovie(){
+        return Promise.resolve(moviesMock[0]);
+    }
+    async createMovie() { 
+        return Promise.resolve(moviesMock[0].id);
+    } 
+}
+
 module.exports = {
-    moviesMock
+    moviesMock,
+    filteredMoviesMock,
+    MovieServiceMock
+
 }

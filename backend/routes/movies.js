@@ -7,7 +7,6 @@ const {
     updateMovieSchema
   } = require('../utils/schemas/movies');
 function moviesApi(app){
-
     const router = express.Router();
     app.use('/api/movies' , router)
 
