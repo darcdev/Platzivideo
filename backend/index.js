@@ -3,7 +3,6 @@ const app = express();
 const moviesApi  = require('./routes/movies');
 const { logErrors  ,wrapErrors ,  errorHandler} = require('./utils/middlewares/errorHandlers');
 const notFoundHandler = require('./utils/middlewares/notFoundHandler');
-
 //app modules
 const {config} = require('./config');
 

@@ -1,10 +1,12 @@
-const boom  = require('boom');
+const boom  = require('@hapi/boom');
+const Joi = require('@hapi/joi')
 
-function validate(data, schema){ //eslint-disable-line
-    return false;
+function validate(data, schema){ 
+    const { error } = Joi.object(schema).validate(data);
+    return error;
 }
 
-function validateHandler(schema , check = "body"){
+function validationHandler(schema , check = "body"){
     return function(req,res,next){
         const error = validate(req[check] , schema);
 
@@ -12,4 +14,4 @@ function validateHandler(schema , check = "body"){
     }
 }
 
-module.exports = validateHandler;
+module.exports = validationHandler;
