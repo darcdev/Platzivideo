@@ -1,0 +1,182 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Code coverage report for utils/mocks/movies.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+    
+<body>
+<div class='wrapper'>
+    <div class='pad1'>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">utils/mocks</a> movies.js</h1>
+        <div class='clearfix'>
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">71.43% </span>
+                <span class="quiet">Statements</span>
+                <span class='fraction'>5/7</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">100% </span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>0/0</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">60% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>3/5</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">66.67% </span>
+                <span class="quiet">Lines</span>
+                <span class='fraction'>4/6</span>
+            </div>
+        
+            
+        </div>
+        <p class="quiet">
+            Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
+        </p>
+    </div>
+    <div class='status-line medium'></div>
+    <pre><table class="coverage">
+<tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
+<a name='L2'></a><a href='#L2'>2</a>
+<a name='L3'></a><a href='#L3'>3</a>
+<a name='L4'></a><a href='#L4'>4</a>
+<a name='L5'></a><a href='#L5'>5</a>
+<a name='L6'></a><a href='#L6'>6</a>
+<a name='L7'></a><a href='#L7'>7</a>
+<a name='L8'></a><a href='#L8'>8</a>
+<a name='L9'></a><a href='#L9'>9</a>
+<a name='L10'></a><a href='#L10'>10</a>
+<a name='L11'></a><a href='#L11'>11</a>
+<a name='L12'></a><a href='#L12'>12</a>
+<a name='L13'></a><a href='#L13'>13</a>
+<a name='L14'></a><a href='#L14'>14</a>
+<a name='L15'></a><a href='#L15'>15</a>
+<a name='L16'></a><a href='#L16'>16</a>
+<a name='L17'></a><a href='#L17'>17</a>
+<a name='L18'></a><a href='#L18'>18</a>
+<a name='L19'></a><a href='#L19'>19</a>
+<a name='L20'></a><a href='#L20'>20</a>
+<a name='L21'></a><a href='#L21'>21</a>
+<a name='L22'></a><a href='#L22'>22</a>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a>
+<a name='L30'></a><a href='#L30'>30</a>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const moviesMock = [
+    {"id":"df1f42e0-5d31-4062-953d-61816ac3f8e7","title":"Love and Pigeons","year":1995,"cover":"http://dummyimage.com/150x250.png/dddddd/000000","description":"Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.","duration":100,"contentRating":"NC-17","source":"http://nih.gov/donec.aspx?sollicitudin=nulla&amp;mi=dapibus&amp;sit=dolor&amp;amet=vel&amp;lobortis=est&amp;sapien=donec&amp;sapien=odio&amp;non=justo&amp;mi=sollicitudin&amp;integer=ut&amp;ac=suscipit&amp;neque=a&amp;duis=feugiat&amp;bibendum=et&amp;morbi=eros&amp;non=vestibulum&amp;quam=ac&amp;nec=est&amp;dui=lacinia&amp;luctus=nisi&amp;rutrum=venenatis&amp;nulla=tristique&amp;tellus=fusce&amp;in=congue&amp;sagittis=diam&amp;dui=id&amp;vel=ornare&amp;nisl=imperdiet&amp;duis=sapien&amp;ac=urna&amp;nibh=pretium&amp;fusce=nisl&amp;lacus=ut&amp;purus=volutpat&amp;aliquet=sapien&amp;at=arcu&amp;feugiat=sed&amp;non=augue&amp;pretium=aliquam&amp;quis=erat&amp;lectus=volutpat&amp;suspendisse=in&amp;potenti=congue&amp;in=etiam&amp;eleifend=justo&amp;quam=etiam&amp;a=pretium&amp;odio=iaculis&amp;in=justo&amp;hac=in&amp;habitasse=hac&amp;platea=habitasse&amp;dictumst=platea&amp;maecenas=dictumst&amp;ut=etiam&amp;massa=faucibus&amp;quis=cursus&amp;augue=urna&amp;luctus=ut&amp;tincidunt=tellus&amp;nulla=nulla&amp;mollis=ut&amp;molestie=erat&amp;lorem=id&amp;quisque=mauris&amp;ut=vulputate&amp;erat=elementum&amp;curabitur=nullam&amp;gravida=varius&amp;nisi=nulla&amp;at=facilisi&amp;nibh=cras&amp;in=non&amp;hac=velit&amp;habitasse=nec&amp;platea=nisi&amp;dictumst=vulputate&amp;aliquam=nonummy&amp;augue=maecenas&amp;quam=tincidunt&amp;sollicitudin=lacus&amp;vitae=at&amp;consectetuer=velit&amp;eget=vivamus&amp;rutrum=vel","tags":["Crime|Sci-Fi|Thriller","Action|Drama","Drama|Thriller","Drama|Horror|Mystery|Thriller"]},
+{"id":"5c6feb24-753a-4c8d-86af-898218c198ac","title":"Union Square","year":1986,"cover":"http://dummyimage.com/120x170.png/5fa2dd/ffffff","description":"Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.\n\nDuis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.","duration":41,"contentRating":"PG","source":"http://ox.ac.uk/dapibus.html?sapien=pellentesque&amp;in=eget&amp;sapien=nunc&amp;iaculis=donec&amp;congue=quis&amp;vivamus=orci&amp;metus=eget&amp;arcu=orci&amp;adipiscing=vehicula&amp;molestie=condimentum&amp;hendrerit=curabitur&amp;at=in&amp;vulputate=libero&amp;vitae=ut&amp;nisl=massa&amp;aenean=volutpat&amp;lectus=convallis&amp;pellentesque=morbi&amp;eget=odio&amp;nunc=odio&amp;donec=elementum&amp;quis=eu&amp;orci=interdum&amp;eget=eu&amp;orci=tincidunt&amp;vehicula=in&amp;condimentum=leo&amp;curabitur=maecenas&amp;in=pulvinar&amp;libero=lobortis&amp;ut=est&amp;massa=phasellus&amp;volutpat=sit&amp;convallis=amet&amp;morbi=erat&amp;odio=nulla&amp;odio=tempus&amp;elementum=vivamus&amp;eu=in&amp;interdum=felis&amp;eu=eu&amp;tincidunt=sapien&amp;in=cursus&amp;leo=vestibulum&amp;maecenas=proin&amp;pulvinar=eu&amp;lobortis=mi&amp;est=nulla&amp;phasellus=ac&amp;sit=enim&amp;amet=in&amp;erat=tempor&amp;nulla=turpis&amp;tempus=nec&amp;vivamus=euismod&amp;in=scelerisque&amp;felis=quam&amp;eu=turpis&amp;sapien=adipiscing&amp;cursus=lorem&amp;vestibulum=vitae&amp;proin=mattis&amp;eu=nibh&amp;mi=ligula&amp;nulla=nec&amp;ac=sem&amp;enim=duis&amp;in=aliquam&amp;tempor=convallis&amp;turpis=nunc&amp;nec=proin&amp;euismod=at&amp;scelerisque=turpis&amp;quam=a&amp;turpis=pede&amp;adipiscing=posuere&amp;lorem=nonummy&amp;vitae=integer&amp;mattis=non&amp;nibh=velit&amp;ligula=donec&amp;nec=diam&amp;sem=neque&amp;duis=vestibulum&amp;aliquam=eget&amp;convallis=vulputate&amp;nunc=ut&amp;proin=ultrices&amp;at=vel&amp;turpis=augue&amp;a=vestibulum&amp;pede=ante&amp;posuere=ipsum&amp;nonummy=primis","tags":["Comedy|Drama","Comedy|Romance","Action|Adventure|Drama|Fantasy","Action|Crime"]},
+{"id":"1a590f21-8e7f-4a99-8013-c59426d884c6","title":"Experience, The (Tadjrebeh)","year":1992,"cover":"http://dummyimage.com/227x242.bmp/cc0000/ffffff","description":"Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl.\n\nAenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.\n\nCurabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.","duration":37,"contentRating":"PG-13","source":"http://is.gd/augue/quam.json?turpis=interdum&amp;donec=eu&amp;posuere=tincidunt&amp;metus=in&amp;vitae=leo&amp;ipsum=maecenas&amp;aliquam=pulvinar&amp;non=lobortis&amp;mauris=est&amp;morbi=phasellus&amp;non=sit&amp;lectus=amet&amp;aliquam=erat&amp;sit=nulla&amp;amet=tempus&amp;diam=vivamus&amp;in=in&amp;magna=felis&amp;bibendum=eu&amp;imperdiet=sapien&amp;nullam=cursus&amp;orci=vestibulum&amp;pede=proin&amp;venenatis=eu&amp;non=mi&amp;sodales=nulla&amp;sed=ac&amp;tincidunt=enim&amp;eu=in&amp;felis=tempor&amp;fusce=turpis&amp;posuere=nec&amp;felis=euismod&amp;sed=scelerisque&amp;lacus=quam&amp;morbi=turpis&amp;sem=adipiscing&amp;mauris=lorem&amp;laoreet=vitae&amp;ut=mattis&amp;rhoncus=nibh&amp;aliquet=ligula&amp;pulvinar=nec&amp;sed=sem","tags":["Action|Documentary|Drama|Romance|War","Documentary","Comedy|Drama"]},
+{"id":"dd09103a-c8f9-4bad-a9ba-986411537ce0","title":"Outrageous Fortune","year":1991,"cover":"http://dummyimage.com/205x223.bmp/cc0000/ffffff","description":"Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.\n\nQuisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.\n\nVestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.","duration":91,"contentRating":"R","source":"https://blog.com/donec/quis/orci/eget/orci/vehicula/condimentum.png?et=ligula&amp;magnis=sit&amp;dis=amet&amp;parturient=eleifend&amp;montes=pede&amp;nascetur=libero&amp;ridiculus=quis&amp;mus=orci&amp;etiam=nullam&amp;vel=molestie&amp;augue=nibh&amp;vestibulum=in&amp;rutrum=lectus&amp;rutrum=pellentesque&amp;neque=at&amp;aenean=nulla&amp;auctor=suspendisse&amp;gravida=potenti&amp;sem=cras&amp;praesent=in&amp;id=purus&amp;massa=eu&amp;id=magna&amp;nisl=vulputate&amp;venenatis=luctus&amp;lacinia=cum&amp;aenean=sociis&amp;sit=natoque&amp;amet=penatibus&amp;justo=et&amp;morbi=magnis&amp;ut=dis","tags":["Children|Comedy|Musical"]},
+{"id":"de37972a-00f9-4392-af28-bcbcc6868f9e","title":"Bedrooms &amp; Hallways","year":2001,"cover":"http://dummyimage.com/249x110.png/ff4444/ffffff","description":"Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.\n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.\n\nEtiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem.","duration":90,"contentRating":"G","source":"https://alibaba.com/in/consequat/ut/nulla/sed/accumsan/felis.html?cubilia=felis&amp;curae=fusce&amp;donec=posuere&amp;pharetra=felis&amp;magna=sed&amp;vestibulum=lacus&amp;aliquet=morbi&amp;ultrices=sem&amp;erat=mauris&amp;tortor=laoreet&amp;sollicitudin=ut&amp;mi=rhoncus&amp;sit=aliquet&amp;amet=pulvinar&amp;lobortis=sed&amp;sapien=nisl&amp;sapien=nunc&amp;non=rhoncus&amp;mi=dui&amp;integer=vel&amp;ac=sem&amp;neque=sed&amp;duis=sagittis&amp;bibendum=nam&amp;morbi=congue&amp;non=risus&amp;quam=semper&amp;nec=porta&amp;dui=volutpat&amp;luctus=quam&amp;rutrum=pede&amp;nulla=lobortis&amp;tellus=ligula&amp;in=sit&amp;sagittis=amet&amp;dui=eleifend&amp;vel=pede&amp;nisl=libero&amp;duis=quis&amp;ac=orci&amp;nibh=nullam&amp;fusce=molestie&amp;lacus=nibh&amp;purus=in&amp;aliquet=lectus&amp;at=pellentesque&amp;feugiat=at&amp;non=nulla&amp;pretium=suspendisse&amp;quis=potenti&amp;lectus=cras&amp;suspendisse=in&amp;potenti=purus&amp;in=eu&amp;eleifend=magna&amp;quam=vulputate&amp;a=luctus&amp;odio=cum&amp;in=sociis&amp;hac=natoque&amp;habitasse=penatibus&amp;platea=et&amp;dictumst=magnis&amp;maecenas=dis&amp;ut=parturient&amp;massa=montes&amp;quis=nascetur&amp;augue=ridiculus&amp;luctus=mus&amp;tincidunt=vivamus&amp;nulla=vestibulum&amp;mollis=sagittis","tags":["Adventure|War|Western"]},
+{"id":"3fb1994c-49b7-4c4d-afb7-3c34b675c16e","title":"Me &amp; Isaac Newton","year":2006,"cover":"http://dummyimage.com/139x197.bmp/dddddd/000000","description":"Vestibulum quam sapien, varius ut, blandit non, interdum in, ante. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Duis faucibus accumsan odio. Curabitur convallis.\n\nDuis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.","duration":63,"contentRating":"NC-17","source":"http://umn.edu/turpis/eget/elit.xml?orci=mauris&amp;nullam=morbi&amp;molestie=non&amp;nibh=lectus&amp;in=aliquam&amp;lectus=sit&amp;pellentesque=amet","tags":["Adventure|Comedy|Musical","Action|Adventure|Thriller|War"]},
+{"id":"2119d238-fa7f-4b10-9a0e-3be9899003f9","title":"Sheriff and the Satellite Kid, The","year":1993,"cover":"http://dummyimage.com/182x220.jpg/ff4444/ffffff","description":"Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\n\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.\n\nNullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris.","duration":35,"contentRating":"PG","source":"http://adobe.com/felis.xml?justo=odio&amp;in=porttitor&amp;hac=id&amp;habitasse=consequat&amp;platea=in&amp;dictumst=consequat&amp;etiam=ut&amp;faucibus=nulla&amp;cursus=sed&amp;urna=accumsan&amp;ut=felis&amp;tellus=ut&amp;nulla=at&amp;ut=dolor&amp;erat=quis&amp;id=odio&amp;mauris=consequat&amp;vulputate=varius&amp;elementum=integer&amp;nullam=ac&amp;varius=leo&amp;nulla=pellentesque&amp;facilisi=ultrices&amp;cras=mattis&amp;non=odio&amp;velit=donec&amp;nec=vitae&amp;nisi=nisi&amp;vulputate=nam&amp;nonummy=ultrices&amp;maecenas=libero&amp;tincidunt=non&amp;lacus=mattis&amp;at=pulvinar&amp;velit=nulla&amp;vivamus=pede&amp;vel=ullamcorper&amp;nulla=augue&amp;eget=a&amp;eros=suscipit&amp;elementum=nulla&amp;pellentesque=elit&amp;quisque=ac&amp;porta=nulla&amp;volutpat=sed&amp;erat=vel&amp;quisque=enim&amp;erat=sit&amp;eros=amet&amp;viverra=nunc&amp;eget=viverra&amp;congue=dapibus&amp;eget=nulla&amp;semper=suscipit&amp;rutrum=ligula&amp;nulla=in&amp;nunc=lacus&amp;purus=curabitur&amp;phasellus=at&amp;in=ipsum&amp;felis=ac&amp;donec=tellus&amp;semper=semper&amp;sapien=interdum&amp;a=mauris&amp;libero=ullamcorper&amp;nam=purus&amp;dui=sit&amp;proin=amet&amp;leo=nulla&amp;odio=quisque&amp;porttitor=arcu&amp;id=libero&amp;consequat=rutrum&amp;in=ac&amp;consequat=lobortis&amp;ut=vel&amp;nulla=dapibus&amp;sed=at&amp;accumsan=diam&amp;felis=nam&amp;ut=tristique&amp;at=tortor&amp;dolor=eu","tags":["Drama","Action|Adventure|Children|Comedy|Fantasy","Comedy|Fantasy","Documentary","Comedy|Drama|Mystery|Thriller"]},
+{"id":"a9af0637-c4a1-4a09-bcf1-3df47b9f0c49","title":"Little Manhattan","year":1998,"cover":"http://dummyimage.com/115x225.jpg/dddddd/000000","description":"Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis.\n\nFusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl. Nunc rhoncus dui vel sem.","duration":28,"contentRating":"G","source":"http://economist.com/aenean/fermentum.aspx?sit=consequat&amp;amet=morbi&amp;lobortis=a&amp;sapien=ipsum&amp;sapien=integer&amp;non=a&amp;mi=nibh&amp;integer=in&amp;ac=quis&amp;neque=justo&amp;duis=maecenas&amp;bibendum=rhoncus&amp;morbi=aliquam&amp;non=lacus&amp;quam=morbi&amp;nec=quis&amp;dui=tortor&amp;luctus=id&amp;rutrum=nulla&amp;nulla=ultrices&amp;tellus=aliquet&amp;in=maecenas&amp;sagittis=leo&amp;dui=odio&amp;vel=condimentum&amp;nisl=id&amp;duis=luctus&amp;ac=nec&amp;nibh=molestie&amp;fusce=sed&amp;lacus=justo&amp;purus=pellentesque&amp;aliquet=viverra&amp;at=pede&amp;feugiat=ac&amp;non=diam&amp;pretium=cras&amp;quis=pellentesque&amp;lectus=volutpat&amp;suspendisse=dui&amp;potenti=maecenas&amp;in=tristique&amp;eleifend=est&amp;quam=et&amp;a=tempus&amp;odio=semper&amp;in=est&amp;hac=quam&amp;habitasse=pharetra&amp;platea=magna&amp;dictumst=ac&amp;maecenas=consequat&amp;ut=metus&amp;massa=sapien&amp;quis=ut&amp;augue=nunc&amp;luctus=vestibulum&amp;tincidunt=ante&amp;nulla=ipsum&amp;mollis=primis&amp;molestie=in&amp;lorem=faucibus&amp;quisque=orci&amp;ut=luctus&amp;erat=et&amp;curabitur=ultrices&amp;gravida=posuere&amp;nisi=cubilia","tags":["Drama","Action|Comedy|Crime","Documentary|Drama|War"]},
+{"id":"75fcd49c-e56b-4c4f-95ba-43fdba76d858","title":"Secret Garden, The","year":2008,"cover":"http://dummyimage.com/243x150.png/5fa2dd/ffffff","description":"Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.\n\nMorbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem.\n\nFusce consequat. Nulla nisl. Nunc nisl.","duration":42,"contentRating":"PG-13","source":"http://vistaprint.com/mi/integer/ac/neque/duis/bibendum.xml?at=tempus&amp;turpis=semper&amp;donec=est&amp;posuere=quam&amp;metus=pharetra&amp;vitae=magna&amp;ipsum=ac&amp;aliquam=consequat&amp;non=metus&amp;mauris=sapien&amp;morbi=ut&amp;non=nunc&amp;lectus=vestibulum&amp;aliquam=ante&amp;sit=ipsum&amp;amet=primis&amp;diam=in&amp;in=faucibus&amp;magna=orci&amp;bibendum=luctus&amp;imperdiet=et&amp;nullam=ultrices&amp;orci=posuere&amp;pede=cubilia&amp;venenatis=curae&amp;non=mauris&amp;sodales=viverra&amp;sed=diam&amp;tincidunt=vitae&amp;eu=quam&amp;felis=suspendisse&amp;fusce=potenti&amp;posuere=nullam&amp;felis=porttitor&amp;sed=lacus&amp;lacus=at&amp;morbi=turpis&amp;sem=donec&amp;mauris=posuere&amp;laoreet=metus&amp;ut=vitae&amp;rhoncus=ipsum&amp;aliquet=aliquam&amp;pulvinar=non&amp;sed=mauris&amp;nisl=morbi&amp;nunc=non&amp;rhoncus=lectus&amp;dui=aliquam&amp;vel=sit&amp;sem=amet&amp;sed=diam&amp;sagittis=in&amp;nam=magna&amp;congue=bibendum&amp;risus=imperdiet&amp;semper=nullam&amp;porta=orci&amp;volutpat=pede&amp;quam=venenatis&amp;pede=non&amp;lobortis=sodales&amp;ligula=sed&amp;sit=tincidunt&amp;amet=eu&amp;eleifend=felis&amp;pede=fusce&amp;libero=posuere&amp;quis=felis&amp;orci=sed&amp;nullam=lacus&amp;molestie=morbi&amp;nibh=sem&amp;in=mauris&amp;lectus=laoreet&amp;pellentesque=ut&amp;at=rhoncus&amp;nulla=aliquet&amp;suspendisse=pulvinar&amp;potenti=sed&amp;cras=nisl&amp;in=nunc&amp;purus=rhoncus&amp;eu=dui&amp;magna=vel","tags":["Animation|Children","Drama|War","Comedy|Fantasy","Comedy|Drama"]},
+{"id":"a4592f4e-f495-4e5b-a1b7-9d2f5d271e60","title":"Windtalkers","year":2008,"cover":"http://dummyimage.com/218x151.png/ff4444/ffffff","description":"Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus.","duration":82,"contentRating":"G","source":"http://sciencedirect.com/eu.aspx?nisi=enim&amp;at=in&amp;nibh=tempor&amp;in=turpis&amp;hac=nec&amp;habitasse=euismod&amp;platea=scelerisque&amp;dictumst=quam&amp;aliquam=turpis&amp;augue=adipiscing&amp;quam=lorem&amp;sollicitudin=vitae&amp;vitae=mattis&amp;consectetuer=nibh&amp;eget=ligula&amp;rutrum=nec&amp;at=sem&amp;lorem=duis&amp;integer=aliquam&amp;tincidunt=convallis&amp;ante=nunc&amp;vel=proin&amp;ipsum=at&amp;praesent=turpis&amp;blandit=a&amp;lacinia=pede&amp;erat=posuere&amp;vestibulum=nonummy&amp;sed=integer&amp;magna=non&amp;at=velit&amp;nunc=donec&amp;commodo=diam&amp;placerat=neque&amp;praesent=vestibulum&amp;blandit=eget&amp;nam=vulputate&amp;nulla=ut&amp;integer=ultrices&amp;pede=vel&amp;justo=augue&amp;lacinia=vestibulum&amp;eget=ante&amp;tincidunt=ipsum&amp;eget=primis&amp;tempus=in&amp;vel=faucibus&amp;pede=orci&amp;morbi=luctus&amp;porttitor=et&amp;lorem=ultrices&amp;id=posuere&amp;ligula=cubilia&amp;suspendisse=curae&amp;ornare=donec&amp;consequat=pharetra&amp;lectus=magna&amp;in=vestibulum&amp;est=aliquet&amp;risus=ultrices&amp;auctor=erat&amp;sed=tortor&amp;tristique=sollicitudin&amp;in=mi&amp;tempus=sit&amp;sit=amet&amp;amet=lobortis&amp;sem=sapien&amp;fusce=sapien","tags":["Drama|Thriller","Horror"]}]
+&nbsp;
+&nbsp;
+function filteredMoviesMock(tag){
+    return moviesMock.filter(movie =&gt; movie.tags.includes(tag));
+}
+&nbsp;
+class MovieServiceMock {
+    async getMovies(){
+        return Promise.resolve(moviesMock);
+    }
+<span class="fstat-no" title="function not covered" >    as</span>ync getMovie(){
+<span class="cstat-no" title="statement not covered" >        return Promise.resolve(moviesMock[0]);</span>
+    }
+<span class="fstat-no" title="function not covered" >    as</span>ync createMovie() { 
+<span class="cstat-no" title="statement not covered" >        return Promise.resolve(moviesMock[0].id);</span>
+    } 
+}
+&nbsp;
+module.exports = {
+    moviesMock,
+    filteredMoviesMock,
+    MovieServiceMock
+&nbsp;
+}</pre></td></tr></table></pre>
+
+                <div class='push'></div><!-- for sticky footer -->
+            </div><!-- /wrapper -->
+            <div class='footer quiet pad2 space-top1 center small'>
+                Code coverage generated by
+                <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
+                at Tue May 19 2020 20:17:43 GMT-0500 (GMT-05:00)
+            </div>
+        </div>
+        <script src="../../prettify.js"></script>
+        <script>
+            window.onload = function () {
+                prettyPrint();
+            };
+        </script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
+    </body>
+</html>
+    
