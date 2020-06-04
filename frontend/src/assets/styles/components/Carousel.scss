@@ -4,6 +4,9 @@
   width: 100%;
   position: relative;
 }
+.carousel::-webkit-scrollbar {
+  display: none;
+}
 
 .carousel__container {
   transition: 450ms transform;
