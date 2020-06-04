@@ -14,7 +14,23 @@ var App = function App() {
     <div className="app">
       <Header />
       <Search />
-      <Categories>
+      <Categories title="mi lista">
+        <Carousel>
+          <CarouselItem />
+          <CarouselItem />
+          <CarouselItem />
+          <CarouselItem />
+        </Carousel>
+      </Categories>
+      <Categories title="Tendencias">
+        <Carousel>
+          <CarouselItem />
+          <CarouselItem />
+          <CarouselItem />
+          <CarouselItem />
+        </Carousel>
+      </Categories>
+      <Categories title="Originales de Platzi Video">
         <Carousel>
           <CarouselItem />
           <CarouselItem />
