@@ -14,7 +14,7 @@ var App = function App() {
     <div className="app">
       <Header />
       <Search />
-      <Categories title="mi lista">
+      <Categories title="Mi lista">
         <Carousel>
           <CarouselItem />
           <CarouselItem />
