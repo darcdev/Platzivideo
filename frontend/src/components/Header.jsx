@@ -1,4 +1,6 @@
 import React from "react";
+import "../assets/styles/components/Header.scss";
+
 var App = function App() {
   return (
     <header className="header">
