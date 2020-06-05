@@ -5,14 +5,16 @@ import "../assets/styles/components/CarouselItem.scss";
 import playIcon from "../assets/static/play-icon.png";
 import plusIcon from "../assets/static/plus-icon.png";
 
-var CarouselItem = function CarouselItem() {
+var CarouselItem = function CarouselItem({
+  title,
+  cover,
+  contentRating,
+  duration,
+  year,
+}) {
   return (
     <div className="carousel-item">
-      <img
-        className="carousel-item__img"
-        src="https://images.pexels.com/photos/789822/pexels-photo-789822.jpeg?auto=format%2Ccompress&cs=tinysrgb&dpr=2&h=750&w=1260"
-        alt=""
-      />
+      <img className="carousel-item__img" src={cover} alt={title} />
       <div className="carousel-item__details">
         <div>
           <img
@@ -26,8 +28,10 @@ var CarouselItem = function CarouselItem() {
             alt="Plus Icon"
           />
         </div>
-        <p className="carousel-item__details--title">Título descriptivo</p>
-        <p className="carousel-item__details--subtitle">2019 16+ 114 minutos</p>
+        <p className="carousel-item__details--title">{title}</p>
+        <p className="carousel-item__details--subtitle">
+          {`${year} ${contentRating} ${duration}m`}
+        </p>
       </div>
     </div>
   );
