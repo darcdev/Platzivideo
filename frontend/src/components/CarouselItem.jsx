@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import "../assets/styles/components/CarouselItem.scss";
 
@@ -37,4 +38,10 @@ var CarouselItem = function CarouselItem({
   );
 };
 
+CarouselItem.propTypes = {
+  name: PropTypes.string,
+  lastName: PropTypes.string,
+  age: PropTypes.number,
+  list: PropTypes.array,
+};
 export default CarouselItem;
