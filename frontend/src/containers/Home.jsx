@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-import Header from '../components/Header';
 
 import '../assets/styles/App.scss';
 
@@ -8,7 +7,6 @@ import Search from '../components/Search';
 import Categories from '../components/Categories';
 import Carousel from '../components/Carousel';
 import CarouselItem from '../components/CarouselItem';
-import Footer from '../components/Footer';
 import useInitialState from '../hooks/useInitialState';
 
 const API = 'http://localhost:3000/initialState';
@@ -17,8 +15,7 @@ const Home = function Home() {
   const initialState = useInitialState(API);
 
   return (
-    <div className="app">
-      <Header />
+    <>
       <Search />
       {initialState.mylist.length > 0 && (
         <Categories title="Mi lista">
@@ -42,8 +39,7 @@ const Home = function Home() {
           ))}
         </Carousel>
       </Categories>
-      <Footer />
-    </div>
+    </>
   );
 };
 
