@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Register = function Register() {
   return (
@@ -13,7 +14,7 @@ const Register = function Register() {
             Registrarme
           </button>
         </form>
-        <a href="/">Iniciar sesión</a>
+        <Link to="/login">Iniciar sesión</Link>
       </section>
     </section>
   );

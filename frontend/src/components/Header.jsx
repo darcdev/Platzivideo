@@ -1,13 +1,16 @@
-import React from "react";
-import "../assets/styles/components/Header.scss";
+import React from 'react';
+import '../assets/styles/components/Header.scss';
+import { Link } from 'react-router-dom';
 
-import Logo from "../assets/static/logo-platzi-video-BW2.png";
-import userIcon from "../assets/static/user-icon.png";
+import Logo from '../assets/static/logo-platzi-video-BW2.png';
+import userIcon from '../assets/static/user-icon.png';
 
-var App = function App() {
+const App = function App() {
   return (
     <header className="header">
-      <img className="header__img" src={Logo} alt="Platzi Video" />
+      <Link to="/">
+        <img className="header__img" src={Logo} alt="Platzi Video" />
+      </Link>
       <div className="header__menu">
         <div className="header__menu--profile">
           <img src={userIcon} alt="" />
@@ -15,10 +18,10 @@ var App = function App() {
         </div>
         <ul>
           <li>
-            <a href="/">Cuenta</a>
+            <Link to="/">Cuenta</Link>
           </li>
           <li>
-            <a href="/">Cerrar Sesión</a>
+            <Link to="/">Cerrar Sesión</Link>
           </li>
         </ul>
       </div>
