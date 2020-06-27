@@ -6,19 +6,41 @@ import googleIcon from '../assets/static/google-icon.png';
 import twitterIcon from '../assets/static/twitter-icon.png';
 
 const Login = function Login() {
+  const [form, setValuesForm] = useState({
+    email: '',
+  });
+
+  const handleInput = (event) => {
+    setValuesForm({
+      ...form,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log(form);
+  };
   return (
     <section className="login">
       <section className="login__container">
         <h2>Inicia Sesion</h2>
-        <form className="login__container--form">
+        <form className="login__container--form" onSubmit={handleSubmit}>
           <input
+            name="email"
             type="text"
             className="input"
             placeholder="Correo"
-            value={form.email}
+            onChange={handleInput}
           />
-          <input type="password" className="input" placeholder="Contraseña" />
-          <button type="button" className="button">
+          <input
+            name="password"
+            type="password"
+            className="input"
+            placeholder="Contraseña"
+            onChange={handleInput}
+          />
+          <button type="submit" className="button">
             Iniciar Sesion
           </button>
           <div className="login__container--remember-me">
