@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { registerRequest } from '../actions';
 
 const Register = function Register(props) {
   const [form, setFormValues] = useState({
@@ -15,7 +17,8 @@ const Register = function Register(props) {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(form);
+    props.registerRequest(form);
+    props.history.push('/');
   };
   return (
     <section className="register">
@@ -52,5 +55,7 @@ const Register = function Register(props) {
     </section>
   );
 };
-
-export default Register;
+const mapDispathToProps = {
+  registerRequest,
+};
+export default connect(null, mapDispathToProps)(Register);

@@ -18,4 +18,15 @@ const logoutRequest = (payload) => ({
   payload,
 });
 
-export { setFavorite, deleteFavorite, loginRequest, logoutRequest };
+const registerRequest = (payload) => ({
+  type: 'REGISTER_REQUEST',
+  payload,
+});
+
+export {
+  setFavorite,
+  deleteFavorite,
+  loginRequest,
+  logoutRequest,
+  registerRequest,
+};
