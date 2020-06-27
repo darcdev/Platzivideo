@@ -12,11 +12,12 @@ const Home = function Home({ myList, trends, originals }) {
   return (
     <>
       <Search />
-      {console.log(myList, trends)}
       {myList.length > 0 && (
         <Categories title="Mi lista">
           <Carousel>
-            <CarouselItem />
+            {myList.map((item) => (
+              <CarouselItem key={item.id} {...item} isList={true} />
+            ))}
           </Carousel>
         </Categories>
       )}

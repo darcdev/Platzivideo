@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../assets/styles/components/Login.scss';
 import { Link } from 'react-router-dom';
 
@@ -11,7 +11,12 @@ const Login = function Login() {
       <section className="login__container">
         <h2>Inicia Sesion</h2>
         <form className="login__container--form">
-          <input type="text" className="input" placeholder="Correo" />
+          <input
+            type="text"
+            className="input"
+            placeholder="Correo"
+            value={form.email}
+          />
           <input type="password" className="input" placeholder="Contraseña" />
           <button type="button" className="button">
             Iniciar Sesion
