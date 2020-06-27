@@ -13,4 +13,9 @@ const loginRequest = (payload) => ({
   payload,
 });
 
-export { setFavorite, deleteFavorite, loginRequest };
+const logoutRequest = (payload) => ({
+  type: 'LOGOUT_REQUEST',
+  payload,
+});
+
+export { setFavorite, deleteFavorite, loginRequest, logoutRequest };

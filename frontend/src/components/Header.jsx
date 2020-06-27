@@ -3,13 +3,17 @@ import { connect } from 'react-redux';
 import '../assets/styles/components/Header.scss';
 import { Link } from 'react-router-dom';
 import gravatar from '../utils/gravatar';
+import { logoutRequest } from '../actions';
+
 import Logo from '../assets/static/logo-platzi-video-BW2.png';
 import userIcon from '../assets/static/user-icon.png';
 
 const Header = function Header(props) {
   const { user } = props;
   const hasUser = Object.keys(user).length;
-
+  const handleLogout = () => {
+    props.logoutRequest({});
+  };
   return (
     <header className="header">
       <Link to="/">
@@ -25,12 +29,17 @@ const Header = function Header(props) {
           <p>Perfil</p>
         </div>
         <ul>
-          <li>
-            <Link to="/">Cuenta</Link>
-          </li>
-          <li>
-            <Link to="/">Cerrar Sesión</Link>
-          </li>
+          {hasUser ? <li>{user.email}</li> : null}
+
+          {hasUser ? (
+            <Link to="#logout" onClick={handleLogout}>
+              Cerrar Sesión
+            </Link>
+          ) : (
+            <li>
+              <Link to="/login">Iniciar Sesión</Link>
+            </li>
+          )}
         </ul>
       </div>
     </header>
@@ -42,4 +51,8 @@ const mapStateToProps = (state) => {
     user: state.user,
   };
 };
-export default connect(mapStateToProps, null)(Header);
+
+const mapDispatchToProps = {
+  logoutRequest,
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
