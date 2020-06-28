@@ -5,8 +5,8 @@ import { createStore } from 'redux';
 import { createBrowserHistory } from 'history';
 import { Router } from 'react-router';
 
-import reducer from './reducers';
 import App from './routes/App';
+import reducer from './reducers';
 import initialState from './initialState';
 
 const history = createBrowserHistory();
