@@ -8,6 +8,8 @@ import { createStore } from 'redux';
 import { StaticRouter } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 import webpack from 'webpack';
+import helmet from 'helmet';
+
 import config from './config';
 import routes from '../frontend/routes/serverRoutes';
 import reducer from '../frontend/reducers';
@@ -26,6 +28,11 @@ if (env === 'development') {
 
   app.use(webpackDevMiddleware(compiler, serverConfig));
   app.use(webpackHotMiddleware(compiler));
+} else {
+  app.use(express.static(`${__dirname}/public`));
+  app.use(helmet());
+  app.use(helmet.permittedCrossDomainPolicies);
+  app.disable('x-powered-by');
 }
 
 const setResponse = (html, preloadedState) => {
