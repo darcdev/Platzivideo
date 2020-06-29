@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 /* eslint-disable global-require */
 import React from 'react';
 import { renderToString } from 'react-dom/server';
@@ -11,6 +12,7 @@ import config from './config';
 import routes from '../frontend/routes/serverRoutes';
 import reducer from '../frontend/reducers';
 import initialState from '../frontend/initialState';
+import Layout from '../frontend/components/Layout';
 
 const { env, port } = config;
 const app = express();
@@ -26,7 +28,7 @@ if (env === 'development') {
   app.use(webpackHotMiddleware(compiler));
 }
 
-const setResponse = (html) => {
+const setResponse = (html, preloadedState) => {
   return `<!DOCTYPE html>
     <html lang="en">
       <head>
@@ -37,7 +39,13 @@ const setResponse = (html) => {
       </head>
       <body>
         <div id="app">${html}</div>
-        <script src="./assets/app.js"></script> 
+        <script>
+        window.__PRELOADED_STATE__ = ${JSON.stringify(preloadedState).replace(
+          /</g,
+          '\\u003c'
+        )}
+        </script>
+        <script src="./assets/app.js"></script>
       </body>
     </html>`;
 };
@@ -46,11 +54,11 @@ const renderApp = (req, res) => {
   const html = renderToString(
     <Provider store={store}>
       <StaticRouter location={req.url} context={{}}>
-        {renderRoutes(routes)}
+        <Layout>{renderRoutes(routes)}</Layout>
       </StaticRouter>
     </Provider>
   );
-  res.send(setResponse(html));
+  res.send(setResponse(html, initialState));
 };
 
 app.get('*', renderApp);
