@@ -16,6 +16,7 @@ import reducer from '../frontend/reducers';
 import initialState from '../frontend/initialState';
 import Layout from '../frontend/components/Layout';
 import getManifest from './getManifest';
+import { render } from 'node-sass';
 
 const { env, port } = config;
 const app = express();
@@ -30,14 +31,14 @@ if (env === 'development') {
   app.use(webpackDevMiddleware(compiler, serverConfig));
   app.use(webpackHotMiddleware(compiler));
 } else {
+  console.log('ssiii');
   app.use((req, res, next) => {
-    if (!req.hashManifest) req.hasManifest = getManifest();
+    if (!req.hashManifest) req.hashManifest = getManifest();
     next();
   });
-  app.use(express.static(`${__dirname}/public`));
+  app.use(express.static(`${__dirname}/public/`));
   app.use(helmet());
-  app.use(helmet.permittedCrossDomainPolicies);
-  app.disable('x-powered-by');
+  app.use(helmet.permittedCrossDomainPolicies());
 }
 
 const setResponse = (html, preloadedState, manifest) => {
