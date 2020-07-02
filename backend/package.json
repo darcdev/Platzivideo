@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "set DEBUG=app:* & nodemon index -e *",
-    "start": "set NODE_ENV=production&& node index",
+    "dev": "DEBUG=app:* nodemon index.js -e *",
+    "start": "NODE_ENV=production node index",
     "test": "mocha --exit",
-    "cover" : "nyc npm run test",
-    "report" : "nyc report --reporter=html && start coverage/index.html"
+    "cover": "nyc npm run test",
+    "report": "nyc report --reporter=html && start coverage/index.html"
   },
   "keywords": [],
   "author": "",
@@ -16,6 +16,7 @@
   "dependencies": {
     "@hapi/boom": "^9.1.0",
     "@hapi/joi": "^17.1.1",
+    "bcrypt": "^5.0.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongodb": "^3.5.7"
@@ -42,7 +43,12 @@
     "*.js": "eslint --cache --fix"
   },
   "nyc": {
-    "all" : true ,
-    "include" : ["routes" ,"services" , "lib" , "utils"]
+    "all": true,
+    "include": [
+      "routes",
+      "services",
+      "lib",
+      "utils"
+    ]
   }
 }
