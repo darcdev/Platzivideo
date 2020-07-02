@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const moviesApi = require('./routes/movies');
+const userMoviesApi = require('./routes/userMovies');
+
 const {
   logErrors,
   wrapErrors,
@@ -11,9 +13,12 @@ const notFoundHandler = require('./utils/middlewares/notFoundHandler');
 const { config } = require('./config');
 
 app.use(express.json());
+
+//routes
 moviesApi(app);
-app.use(notFoundHandler);
+userMoviesApi(app);
 // middlewares de error
+app.use(notFoundHandler);
 app.use(logErrors);
 app.use(wrapErrors);
 app.use(errorHandler);

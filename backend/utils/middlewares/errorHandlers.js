@@ -8,7 +8,6 @@ function withErrorStack(error, stack) {
   return error;
 }
 function logErrors(err, req, res, next) {
-  console.log(err);
   next(err);
 }
 function wrapErrors(err, req, res, next) {
