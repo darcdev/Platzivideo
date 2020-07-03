@@ -47,7 +47,6 @@ function authApi(app) {
             email,
             scopes: apiKey.scopes,
           };
-
           const token = jwt.sign(payload, config.authJwtSecret, {
             expiresIn: '15m',
           });

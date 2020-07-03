@@ -10,11 +10,12 @@ passport.use(
     const userServices = new UsersService();
     try {
       const user = await userServices.getUser({ email });
+
       if (!user) {
-        return cb(boom.unauthorized, false);
+        return cb(boom.unauthorized(), false);
       }
       if (!(await bcrypt.compare(password, user.password))) {
-        return cb(boom.unauthorized, false);
+        return cb(boom.unauthorized(), false);
       }
       delete user.password;
       return cb(null, user);
