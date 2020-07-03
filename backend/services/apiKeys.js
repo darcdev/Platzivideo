@@ -12,4 +12,4 @@ class ApiKeysService {
   }
 }
 
-module.export = ApiKeysService;
+module.exports = ApiKeysService;
