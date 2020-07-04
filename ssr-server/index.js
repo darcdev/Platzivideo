@@ -3,11 +3,12 @@ const passport = require('passport');
 const boom = require('@hapi/boom');
 const cookieParser = require('cookie-parser');
 const axios = require('axios');
-
+const helmet = require('helmet');
 const { config } = require('./config');
 
 const app = express();
 
+app.use(helmet());
 // body parser
 app.use(express.json());
 app.use(cookieParser());
