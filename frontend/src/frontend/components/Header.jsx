@@ -12,7 +12,12 @@ const Header = function Header(props) {
   const { user } = props;
   const hasUser = Object.keys(user).length;
   const handleLogout = () => {
+    document.cookie = 'email=';
+    document.cookie = 'name=';
+    document.cookie = 'id=';
+    document.cookie = 'token=';
     props.logoutRequest({});
+    window.location.href = '/login';
   };
   return (
     <header className="header">

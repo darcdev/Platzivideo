@@ -77,24 +77,36 @@ const setResponse = (html, preloadedState, manifest) => {
       </body>
     </html>`;
 };
-const renderApp = (req, res) => {
+const renderApp = async (req, res) => {
   let initialState;
-  const { email, name, id } = req.cookies;
+  const { token, email, name, id } = req.cookies;
 
-  if (id) {
+  try {
+    let movieList = await axios({
+      url: `${config.apiUrl}/api/movies`,
+      headers: { Authorization: `Bearer ${token}` },
+      method: 'get',
+    });
+    movieList = movieList.data.data;
     initialState = {
       user: {
+        id,
         email,
         name,
-        id,
       },
+      playing: {},
       myList: [],
-      trends: [],
-      originals: [],
+      trends: movieList.filter(
+        (movie) => movie.contentRating === 'PG' && movie._id
+      ),
+      originals: movieList.filter(
+        (movie) => movie.contentRating === 'G' && movie._id
+      ),
     };
-  } else {
+  } catch (err) {
     initialState = {
       user: {},
+      playing: {},
       myList: [],
       trends: [],
       originals: [],
@@ -122,12 +134,11 @@ app.post('/auth/sign-in', async (req, res, next) => {
         if (error) {
           next(error);
         }
-
         const { token, user } = data;
 
         res.cookie('token', token, {
-          httpOnly: !config.dev,
-          secure: !config.dev,
+          httpOnly: config.env !== 'development',
+          secure: config.env !== 'development',
         });
         res.status(200).json(user);
       });
@@ -139,9 +150,6 @@ app.post('/auth/sign-in', async (req, res, next) => {
 
 app.post('/auth/sign-up', async (req, res, next) => {
   const { body: user } = req;
-  console.log(user);
-  const url = `${config.apiUrl}/api/auth/sign-up`;
-  console.log(url);
   try {
     const { data: userId } = await axios({
       url: `${config.apiUrl}/api/auth/sign-up`,
