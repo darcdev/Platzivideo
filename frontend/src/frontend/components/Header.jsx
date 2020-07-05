@@ -29,7 +29,7 @@ const Header = function Header(props) {
           <p>Perfil</p>
         </div>
         <ul>
-          {hasUser ? <li>{user.email}</li> : null}
+          {hasUser ? <li>{user.name}</li> : null}
 
           {hasUser ? (
             <Link to="#logout" onClick={handleLogout}>

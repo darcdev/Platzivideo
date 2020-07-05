@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import '../assets/styles/components/Login.scss';
 import { Link } from 'react-router-dom';
-import { loginRequest } from '../actions';
+import { loginUser } from '../actions';
 import googleIcon from '../assets/static/google-icon.png';
 import twitterIcon from '../assets/static/twitter-icon.png';
 
@@ -20,14 +20,13 @@ const Login = function Login(props) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.loginRequest(form);
-    props.history.push('/');
+    props.loginUser(form, '/');
   };
   return (
     <section className="login">
       <section className="login__container">
         <h2>Inicia Sesion</h2>
-        <form className="login__container--form" onSubmit={handleSubmit}>
+        <form className="login__container--form">
           <input
             name="email"
             type="text"
@@ -42,7 +41,7 @@ const Login = function Login(props) {
             placeholder="Contraseña"
             onChange={handleInput}
           />
-          <button type="submit" className="button">
+          <button type="button" onClick={handleSubmit} className="button">
             Iniciar Sesion
           </button>
           <div className="login__container--remember-me">
@@ -73,7 +72,7 @@ const Login = function Login(props) {
   );
 };
 const mapDispatchToProps = {
-  loginRequest,
+  loginUser,
 };
 
 export default connect(null, mapDispatchToProps)(Login);

@@ -13,11 +13,11 @@ require('dotenv').config();
 const isDev = process.env.ENV === 'development';
 const entry = ['./src/frontend/index.js'];
 
-if (isDev) {
-  entry.push(
-    'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=2000&reload=true'
-  );
-}
+// if (isDev) {
+//   entry.push(
+//     'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=2000&reload=true'
+//   );
+// }
 
 module.exports = {
   entry,

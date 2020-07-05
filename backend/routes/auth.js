@@ -43,7 +43,6 @@ function authApi(app) {
             next(boom.unauthorized());
           }
           const { _id: id, name, email } = user;
-
           const payload = {
             sub: id,
             name,

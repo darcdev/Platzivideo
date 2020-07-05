@@ -23,7 +23,7 @@ import getManifest from './getManifest';
 import config from './config';
 
 //Basic Strategy
-import './utils/auth/strategies/basic';
+require('./utils/auth/strategies/basic');
 
 const { env, port } = config;
 const app = express();
@@ -107,7 +107,6 @@ app.post('/auth/sign-in', async (req, res, next) => {
           httpOnly: !config.dev,
           secure: !config.dev,
         });
-
         res.status(200).json(user);
       });
     } catch (error) {
@@ -118,10 +117,12 @@ app.post('/auth/sign-in', async (req, res, next) => {
 
 app.post('/auth/sign-up', async (req, res, next) => {
   const { body: user } = req;
-
+  console.log(user);
+  const url = `${config.apiUrl}/api/auth/sign-up`;
+  console.log(url);
   try {
-    await axios({
-      url: `${config.api_url}/api/auth/sign-up`,
+    const { data: userId } = await axios({
+      url: `${config.apiUrl}/api/auth/sign-up`,
       method: 'post',
       data: {
         email: user.email,
@@ -129,10 +130,12 @@ app.post('/auth/sign-up', async (req, res, next) => {
         password: user.password,
       },
     });
-    res
-      .status(201)
-      .json({ name: user.name, email: user.email, id: userData.data.id });
-  } catch (error) {}
+
+    console.log(userId);
+    res.status(201).json({ name: user.name, email: user.email, id: userId });
+  } catch (error) {
+    console.log(error);
+  }
 });
 
 app.get('*', renderApp);

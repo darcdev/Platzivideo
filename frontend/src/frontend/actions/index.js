@@ -36,7 +36,32 @@ const registerUser = (payload, redirectUrl) => {
   return (dispatch) => {
     axios
       .post('/auth/sign-up', payload)
-      .then(({ data }) => dispatch(registerRequest(data)))
+      .then(({ data }) => {
+        console.log('holaaa');
+        dispatch(registerRequest(data));
+      })
+      .then(() => {
+        window.location.href = redirectUrl;
+      })
+      .catch((err) => dispatch(setError(err)));
+  };
+};
+const loginUser = ({ email, password }, redirectUrl) => {
+  return (dispatch) => {
+    axios({
+      url: '/auth/sign-in',
+      method: 'post',
+      auth: {
+        username: email,
+        password,
+      },
+    })
+      .then(({ data: user }) => {
+        document.cookie = `email=${user.email}`;
+        document.cookie = `name=${user.name}`;
+        document.cookie = `id=${user._id}`;
+        dispatch(loginRequest(user));
+      })
       .then(() => {
         window.location.href = redirectUrl;
       })
@@ -49,6 +74,7 @@ export {
   loginRequest,
   logoutRequest,
   registerUser,
+  loginUser,
   setError,
   getVideoSource,
 };

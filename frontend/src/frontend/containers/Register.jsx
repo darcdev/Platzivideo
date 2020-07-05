@@ -17,6 +17,7 @@ const Register = function Register(props) {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(form);
     props.registerUser(form, '/login');
   };
   return (
@@ -54,7 +55,7 @@ const Register = function Register(props) {
     </section>
   );
 };
-const mapDispathToProps = {
+const mapDispatchToProps = {
   registerUser,
 };
-export default connect(null, mapDispathToProps)(Register);
+export default connect(null, mapDispatchToProps)(Register);
