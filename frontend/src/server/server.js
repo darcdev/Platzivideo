@@ -9,16 +9,29 @@ import { StaticRouter } from 'react-router-dom';
 import { renderRoutes } from 'react-router-config';
 import webpack from 'webpack';
 import helmet from 'helmet';
+import cookieParser from 'cookie-parser';
+import boom from '@hapi/boom';
+import passport from 'passport';
+import axios from 'axios';
 
-import config from './config';
 import routes from '../frontend/routes/serverRoutes';
 import reducer from '../frontend/reducers';
 import initialState from '../frontend/initialState';
 import Layout from '../frontend/components/Layout';
 import getManifest from './getManifest';
 
+import config from './config';
+
+//Basic Strategy
+import './utils/auth/strategies/basic';
+
 const { env, port } = config;
 const app = express();
+
+app.use(express.json());
+app.use(cookieParser());
+app.use(passport.initialize());
+app.use(passport.session());
 
 if (env === 'development') {
   const webpackConfig = require('../../webpack.config');
@@ -76,6 +89,51 @@ const renderApp = (req, res) => {
   );
   res.send(setResponse(html, initialState, req.hashManifest));
 };
+
+app.post('/auth/sign-in', async (req, res, next) => {
+  passport.authenticate('basic', (error, data) => {
+    try {
+      if (error || !data) {
+        next(boom.unauthorized());
+      }
+      req.login(data, { session: false }, async (error) => {
+        if (error) {
+          next(error);
+        }
+
+        const { token, user } = data;
+
+        res.cookie('token', token, {
+          httpOnly: !config.dev,
+          secure: !config.dev,
+        });
+
+        res.status(200).json(user);
+      });
+    } catch (error) {
+      next(error);
+    }
+  })(req, res, next);
+});
+
+app.post('/auth/sign-up', async (req, res, next) => {
+  const { body: user } = req;
+
+  try {
+    await axios({
+      url: `${config.api_url}/api/auth/sign-up`,
+      method: 'post',
+      data: {
+        email: user.email,
+        name: user.name,
+        password: user.password,
+      },
+    });
+    res
+      .status(201)
+      .json({ name: user.name, email: user.email, id: userData.data.id });
+  } catch (error) {}
+});
 
 app.get('*', renderApp);
 
