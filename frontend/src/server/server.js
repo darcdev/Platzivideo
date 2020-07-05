@@ -14,12 +14,11 @@ import boom from '@hapi/boom';
 import passport from 'passport';
 import axios from 'axios';
 
-import routes from '../frontend/routes/serverRoutes';
 import reducer from '../frontend/reducers';
-import initialState from '../frontend/initialState';
 import Layout from '../frontend/components/Layout';
 import getManifest from './getManifest';
 
+import serverRoutes from '../frontend/routes/serverRoutes';
 import config from './config';
 
 //Basic Strategy
@@ -79,11 +78,34 @@ const setResponse = (html, preloadedState, manifest) => {
     </html>`;
 };
 const renderApp = (req, res) => {
+  let initialState;
+  const { email, name, id } = req.cookies;
+
+  if (id) {
+    initialState = {
+      user: {
+        email,
+        name,
+        id,
+      },
+      myList: [],
+      trends: [],
+      originals: [],
+    };
+  } else {
+    initialState = {
+      user: {},
+      myList: [],
+      trends: [],
+      originals: [],
+    };
+  }
+  const isLogged = initialState.user.id;
   const store = createStore(reducer, initialState);
   const html = renderToString(
     <Provider store={store}>
       <StaticRouter location={req.url} context={{}}>
-        <Layout>{renderRoutes(routes)}</Layout>
+        <Layout>{renderRoutes(serverRoutes(isLogged))}</Layout>
       </StaticRouter>
     </Provider>
   );
@@ -130,8 +152,6 @@ app.post('/auth/sign-up', async (req, res, next) => {
         password: user.password,
       },
     });
-
-    console.log(userId);
     res.status(201).json({ name: user.name, email: user.email, id: userId });
   } catch (error) {
     console.log(error);
