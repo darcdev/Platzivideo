@@ -6,7 +6,6 @@ import '../assets/styles/components/Player.scss';
 
 const Player = function Player(props) {
   const { id } = props.match.params;
-  console.log(props.playing);
   const hasPlaying = Object.keys(props.playing).length > 0;
 
   useEffect(() => {
